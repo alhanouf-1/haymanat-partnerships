@@ -1,0 +1,94 @@
+/* ===== Fonts (local) ===== */
+@font-face{font-family:"Tajawal";font-weight:400;font-display:swap;src:url("../fonts/tajawal-arabic-400-normal.woff2") format("woff2");unicode-range:U+0600-06FF,U+0750-077F,U+0870-088E,U+0890-0891,U+0897-08E1,U+08E3-08FF,U+200C-200E,U+2010-2011,U+204F,U+2E41,U+FB50-FDFF,U+FE70-FE74,U+FE76-FEFC}
+@font-face{font-family:"Tajawal";font-weight:500;font-display:swap;src:url("../fonts/tajawal-arabic-500-normal.woff2") format("woff2");unicode-range:U+0600-06FF,U+0750-077F,U+0870-088E,U+0890-0891,U+0897-08E1,U+08E3-08FF,U+200C-200E,U+2010-2011,U+204F,U+2E41,U+FB50-FDFF,U+FE70-FE74,U+FE76-FEFC}
+@font-face{font-family:"Tajawal";font-weight:700;font-display:swap;src:url("../fonts/tajawal-arabic-700-normal.woff2") format("woff2");unicode-range:U+0600-06FF,U+0750-077F,U+0870-088E,U+0890-0891,U+0897-08E1,U+08E3-08FF,U+200C-200E,U+2010-2011,U+204F,U+2E41,U+FB50-FDFF,U+FE70-FE74,U+FE76-FEFC}
+@font-face{font-family:"Inter";font-weight:400;font-display:swap;src:url("../fonts/inter-latin-400-normal.woff2") format("woff2")}
+@font-face{font-family:"Inter";font-weight:600;font-display:swap;src:url("../fonts/inter-latin-600-normal.woff2") format("woff2")}
+@font-face{font-family:"Inter";font-weight:700;font-display:swap;src:url("../fonts/inter-latin-700-normal.woff2") format("woff2")}
+
+/* ===== Design tokens ===== */
+:root {
+  --color-primary: #24304D;
+  --color-secondary: #7868CC;
+  --color-secondary-dark: #5B4BB0;
+  --color-accent: #F3A98B;
+  --color-aqua: #3AB8AB;
+
+  --color-background: #FFF9F5;
+  --color-surface: #FFFFFF;
+  --color-lavender-light: #F1EEFF;
+  --color-peach-light: #FFF0E7;
+  --color-aqua-light: #E5F8F4;
+
+  --color-text: #25304A;
+  --color-muted: #6B7280;
+  --color-border: #E8E7EF;
+
+  --radius-small: 12px;
+  --radius-medium: 18px;
+  --radius-large: 28px;
+
+  --shadow-soft: 0 8px 30px rgba(36, 48, 77, 0.06);
+  --shadow-hover: 0 18px 45px rgba(36, 48, 77, 0.12);
+
+  /* category accents (subtle) */
+  --cat-organizations: #7868CC;  --cat-organizations-bg: #F1EEFF;
+  --cat-clubs: #2A9A8E;          --cat-clubs-bg: #E5F8F4;
+  --cat-volunteer_teams: #D9724A;--cat-volunteer_teams-bg: #FDE9DF;
+  --cat-initiatives: #C98A5E;    --cat-initiatives-bg: #FFF0E7;
+  --cat-hackathons: #24304D;     --cat-hackathons-bg: #E6E9F4;
+
+  --font-ar: "Tajawal", "Inter", system-ui, sans-serif;
+  --font-en: "Inter", "Tajawal", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --header-h: 72px;
+  --container: 1180px;
+}
+
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:calc(var(--header-h) + 12px);-webkit-text-size-adjust:100%}
+html[lang="ar"]{font-family:var(--font-ar)}
+html[lang="en"]{font-family:var(--font-en)}
+html.i18n-pending main,html.i18n-pending .site-header,html.i18n-pending .site-footer{visibility:hidden}
+
+body{margin:0;background:var(--color-background);color:var(--color-text);font-size:1.0625rem;line-height:1.75;overflow-x:hidden;text-align:start}
+html[lang="en"] body{line-height:1.65}
+img{max-width:100%;height:auto;display:block}
+h1,h2,h3{margin:0;color:var(--color-primary);line-height:1.25;font-weight:700}
+html[lang="en"] h1,html[lang="en"] h2{letter-spacing:-.02em}
+p{margin:0}
+a{color:inherit;text-decoration:none}
+button,input,select{font:inherit;color:inherit}
+button{cursor:pointer}
+ul{list-style:none;margin:0;padding:0}
+[hidden]{display:none !important}
+
+.container{width:min(100% - 2.5rem, var(--container));margin-inline:auto}
+.visually-hidden{position:absolute !important;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.icon{width:1.25rem;height:1.25rem;flex:none}
+
+:focus-visible{outline:3px solid var(--color-secondary);outline-offset:3px;border-radius:6px}
+.skip-link{position:absolute;inset-block-start:-100px;inset-inline-start:1rem;background:var(--color-primary);color:#fff;padding:.6rem 1rem;border-radius:var(--radius-small);z-index:200}
+.skip-link:focus{inset-block-start:1rem}
+
+/* mixed-language isolation */
+.bidi{unicode-bidi:isolate}
+
+/* reveal on scroll */
+.reveal{opacity:0;transform:translateY(18px);transition:opacity .7s ease var(--delay,0s),transform .7s ease var(--delay,0s)}
+.reveal.is-visible{opacity:1;transform:none}
+
+@media (prefers-reduced-motion: reduce){
+  html{scroll-behavior:auto}
+  *,*::before,*::after{animation-duration:.01ms !important;animation-iteration-count:1 !important;transition-duration:.01ms !important}
+  .reveal{opacity:1;transform:none}
+}
+.sprite{position:absolute;width:0;height:0;overflow:hidden}
+.reveal--late{--delay:.12s}
+[data-cat="organizations"]{--cc:var(--cat-organizations);--cb:var(--cat-organizations-bg)}
+[data-cat="clubs"]{--cc:var(--cat-clubs);--cb:var(--cat-clubs-bg)}
+[data-cat="volunteer_teams"]{--cc:var(--cat-volunteer_teams);--cb:var(--cat-volunteer_teams-bg)}
+[data-cat="initiatives"]{--cc:var(--cat-initiatives);--cb:var(--cat-initiatives-bg)}
+[data-cat="hackathons"]{--cc:var(--cat-hackathons);--cb:var(--cat-hackathons-bg)}
+[data-cat="total"]{--cc:#24304D;--cb:#E6E9F4}
+.stat-card[data-cat]{--tint:var(--cb);--ink:var(--cc)}
+

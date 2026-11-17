@@ -1,0 +1,138 @@
+{% extends "base.html" %}
+{% block body %}
+<header class="site-header" id="top">
+  <div class="container header-inner">
+    <a class="brand" href="#top" data-i18n-attr="aria-label:brand.name">
+      <img src="{{ url_for('static', filename='images/haymanat-logo.png') }}" width="1024" height="576" alt="شعار هيمنة النجاح" data-i18n-attr="alt:brand.logo_alt">
+    </a>
+
+    <nav class="main-nav" id="main-nav" aria-label="التنقل الرئيسي" data-i18n-attr="aria-label:nav.main_label">
+      <a href="#top" class="nav-link" data-i18n="nav.home">الرئيسية</a>
+      <a href="#partners" class="nav-link" data-i18n="nav.partners">شركاء النجاح</a>
+      <a href="#about" class="nav-link" data-i18n="nav.about">من نحن</a>
+    </nav>
+
+    <div class="header-actions">
+      <div class="lang-switch" role="group" aria-label="تبديل اللغة" data-i18n-attr="aria-label:lang.switcher_label">
+        <button type="button" class="lang-btn" data-lang="ar" lang="ar">العربية</button>
+        <button type="button" class="lang-btn" data-lang="en" lang="en">English</button>
+      </div>
+      <button type="button" class="menu-toggle" id="menu-toggle" aria-expanded="false" aria-controls="main-nav" aria-label="القائمة" data-i18n-attr="aria-label:nav.menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+  <section class="hero" aria-labelledby="hero-title">
+    <div class="hero-shape hero-shape--a" aria-hidden="true"></div>
+    <div class="hero-shape hero-shape--b" aria-hidden="true"></div>
+    <div class="container hero-grid">
+      <div class="hero-copy reveal">
+        <h1 id="hero-title" data-i18n="hero.title">شركاء النجاح، أثر يجمعنا</h1>
+        <p class="hero-desc" data-i18n="hero.description">نفخر في فريق هيمنة النجاح بشراكاتنا التي تجمعنا فيها رؤية مشتركة نحو التعاون والابتكار وصناعة الأثر.</p>
+        <a href="#partners" class="btn btn-primary" id="hero-cta">
+          <span data-i18n="hero.cta">استكشف شركاءنا</span>
+          <svg class="icon icon-dir" aria-hidden="true"><use href="#i-arrow"/></svg>
+        </a>
+      </div>
+
+      <div class="hero-visual reveal reveal--late">
+        <div class="logo-stage">
+          <span class="deco deco-lavender" aria-hidden="true"></span>
+          <span class="deco deco-peach" aria-hidden="true"></span>
+          <span class="deco deco-aqua" aria-hidden="true"></span>
+          <span class="deco deco-ring" aria-hidden="true"></span>
+          <figure class="logo-card">
+            <img src="{{ url_for('static', filename='images/haymanat-logo.png') }}" width="1024" height="576" alt="شعار هيمنة النجاح" data-i18n-attr="alt:brand.logo_alt">
+          </figure>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="stats" aria-labelledby="stats-title">
+    <div class="container">
+      <h2 id="stats-title" class="visually-hidden" data-i18n="stats.title">شراكاتنا بالأرقام</h2>
+      <div class="stats-grid" id="stats-grid"></div>
+    </div>
+  </section>
+
+  <section class="partners" id="partners" aria-labelledby="partners-title">
+    <div class="container">
+      <div class="section-head">
+        <h2 id="partners-title" data-i18n="partners.title">شركاء النجاح</h2>
+        <p data-i18n="partners.subtitle">استكشف جميع شراكاتنا، وابحث أو صفِّ حسب الفئة وفترة التعاون.</p>
+      </div>
+
+      <div class="toolbar">
+        <div class="search-box">
+          <svg class="icon" aria-hidden="true"><use href="#i-search"/></svg>
+          <input type="search" id="search-input" autocomplete="off" spellcheck="false"
+                 placeholder="ابحث عن شريك نجاح..." aria-label="البحث عن شريك"
+                 data-i18n-attr="placeholder:search.placeholder;aria-label:search.label">
+          <button type="button" id="search-clear" class="search-clear" hidden aria-label="مسح البحث" data-i18n-attr="aria-label:search.clear">
+            <svg class="icon" aria-hidden="true"><use href="#i-close"/></svg>
+          </button>
+        </div>
+
+        <div class="period-box">
+          <label for="period-select" class="visually-hidden" data-i18n="filter.period_label">فترة التعاون</label>
+          <select id="period-select" class="period-select"></select>
+        </div>
+      </div>
+
+      <div class="chips" id="category-chips" role="group" aria-label="تصفية حسب الفئة" data-i18n-attr="aria-label:filter.category_label"></div>
+
+      <p class="results-count" id="results-count" role="status" aria-live="polite"></p>
+
+      <div class="cards-grid" id="cards-grid"></div>
+
+      <div class="empty-state" id="empty-state" hidden>
+        <div class="empty-art" aria-hidden="true"><svg class="icon"><use href="#i-search"/></svg></div>
+        <h3 data-i18n="empty.title">لا توجد نتائج</h3>
+        <p data-i18n="empty.text">جرّب كلمات بحث مختلفة أو أعد ضبط التصفية.</p>
+        <button type="button" class="btn btn-soft" id="empty-reset" data-i18n="empty.reset">إعادة ضبط التصفية</button>
+      </div>
+
+      <div class="empty-state" id="error-state" hidden>
+        <h3 data-i18n="error.load_title">تعذّر تحميل البيانات</h3>
+        <p data-i18n="error.load_text">حدث خطأ أثناء تحميل الشراكات. يرجى تحديث الصفحة والمحاولة مرة أخرى.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="about" id="about" aria-labelledby="about-title">
+    <div class="container about-grid">
+      <div>
+        <h2 id="about-title" data-i18n="about.title">من نحن</h2>
+        <p data-i18n="about.text">هيمنة النجاح فريق يؤمن بأن الشراكات الصادقة تصنع أثرًا يدوم.</p>
+      </div>
+      <ul class="about-points">
+        <li class="pt pt-lav" data-i18n="about.point1">رؤية مشتركة</li>
+        <li class="pt pt-aqua" data-i18n="about.point2">تعاون مستمر</li>
+        <li class="pt pt-coral" data-i18n="about.point3">أثر ملموس</li>
+      </ul>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="container footer-inner">
+    <img src="{{ url_for('static', filename='images/haymanat-logo.png') }}" width="1024" height="576" alt="شعار هيمنة النجاح" loading="lazy" class="footer-logo" data-i18n-attr="alt:brand.logo_alt">
+    <p class="footer-tag" data-i18n="footer.tagline">شركاء النجاح، أثر يجمعنا</p>
+    <p class="footer-copy"><span data-i18n="footer.rights">جميع الحقوق محفوظة</span> © <span id="year"></span> <span data-i18n="brand.name">هيمنة النجاح</span></p>
+    <a href="#top" class="footer-top" data-i18n="footer.back_to_top">العودة للأعلى</a>
+  </div>
+</footer>
+
+<div class="modal-backdrop" id="modal" hidden>
+  <div class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-title" tabindex="-1">
+    <button type="button" class="modal-close" id="modal-close" aria-label="إغلاق" data-i18n-attr="aria-label:modal.close">
+      <svg class="icon" aria-hidden="true"><use href="#i-close"/></svg>
+    </button>
+    <div class="modal-body" id="modal-body"></div>
+  </div>
+</div>
+{% endblock %}

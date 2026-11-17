@@ -1,0 +1,51 @@
+/* Mobile-first adjustments are layered on top of desktop defaults via max-width queries. */
+@media (max-width: 1100px){
+  .cards-grid{grid-template-columns:repeat(3,1fr)}
+  .stats-grid{grid-template-columns:repeat(3,1fr)}
+}
+@media (max-width: 860px){
+  :root{--header-h:64px}
+  .menu-toggle{display:flex}
+  .header-inner{gap:.8rem}
+  .header-actions{margin-inline-start:auto}
+  .main-nav{position:absolute;inset-block-start:var(--header-h);inset-inline:0;margin:0;flex-direction:column;gap:.2rem;padding:.8rem 1.25rem 1.2rem;background:rgba(255,255,255,.97);border-block-end:1px solid var(--color-border);box-shadow:var(--shadow-soft);display:none}
+  .main-nav.is-open{display:flex}
+  .nav-link{padding:.8rem 1rem;min-height:44px}
+  .hero-grid{grid-template-columns:1fr;gap:2.4rem}
+  .hero-visual{order:2}
+  .logo-stage{width:min(88%,420px)}
+  .about-grid{grid-template-columns:1fr}
+  .pt-aqua,.pt-coral{margin-inline-start:0}
+  .cards-grid{grid-template-columns:repeat(2,1fr)}
+}
+@media (max-width: 600px){
+  .container{width:min(100% - 1.6rem, var(--container))}
+  .stats-grid{grid-template-columns:repeat(2,1fr);gap:.7rem}
+  .stat-card--total{grid-column:1 / -1}
+  .toolbar{flex-direction:column}
+  .search-box{flex:none}
+  .period-select{width:100%}
+  /* filters scroll horizontally inside their own row, never the page */
+  .chips{flex-wrap:nowrap;overflow-x:auto;scroll-snap-type:x proximity;padding-block-end:.5rem;margin-inline:-.8rem;padding-inline:.8rem;scrollbar-width:none}
+  .chips::-webkit-scrollbar{display:none}
+  .chip{flex:none;scroll-snap-align:start}
+  .cards-grid{grid-template-columns:1fr;gap:.8rem}
+  .card{min-height:0}
+  .card-more{opacity:1;transform:none}
+  .hero-copy h1{font-size:clamp(1.9rem,8.5vw,2.4rem)}
+  .btn{width:100%;justify-content:center}
+  .footer-inner{flex-direction:column;align-items:flex-start}
+  .modal-backdrop{align-items:end;padding:0}
+  .modal{width:100%;border-end-start-radius:0;border-end-end-radius:0}
+}
+@media (max-width: 380px){
+  .lang-btn{padding-inline:.65rem}
+  .brand img{height:48px}
+}
+@media (min-width: 1500px){
+  :root{--container:1320px}
+  .cards-grid{grid-template-columns:repeat(5,1fr)}
+}
+@media (hover: none){
+  .card-more{opacity:1;transform:none}
+}

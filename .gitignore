@@ -1,0 +1,31 @@
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+env/
+.pytest_cache/
+
+# Secrets / env
+.env
+.env.*
+*.pem
+*.key
+
+# Local databases and temp files
+*.db
+*.sqlite
+*.sqlite3
+*.bak
+*.tmp
+*.log
+.DS_Store
+Thumbs.db
+
+# Editors / tooling
+.vscode/
+.idea/
+.vercel/
+node_modules/
+
+# NOTE: data/partners.json, translations/*.json and public/static/images/ MUST be committed.
