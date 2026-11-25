@@ -3,6 +3,8 @@ import json
 
 from flask import Blueprint, abort, current_app, jsonify, render_template
 
+from ..assets import asset_version
+
 public_bp = Blueprint("public", __name__)
 
 SUPPORTED_LANGS = ("ar", "en")
@@ -20,8 +22,16 @@ def index():
 
 @public_bp.get("/api/partners")
 def partners():
-    response = jsonify(_load_json(current_app.config["DATA_FILE"]))
-    response.headers["Cache-Control"] = "public, max-age=300"
+    data = _load_json(current_app.config["DATA_FILE"])
+    for record in data:
+        # Version local logo URLs by file content so a replaced image is never served from browser cache.
+        logo = record.get("logo")
+        if isinstance(logo, str) and logo.startswith("/static/") and "?" not in logo:
+            version = asset_version(current_app.static_folder, logo[len("/static/"):])
+            if version:
+                record["logo"] = f"{logo}?v={version}"
+    response = jsonify(data)
+    response.headers["Cache-Control"] = "no-cache"
     return response
 
 

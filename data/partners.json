@@ -7,7 +7,7 @@
     "period": "2025",
     "description_ar": null,
     "description_en": null,
-    "logo": null,
+    "logo": "/static/images/partners/watan-tamouh.png",
     "website": null
   },
   {
@@ -18,7 +18,7 @@
     "period": "2025",
     "description_ar": null,
     "description_en": null,
-    "logo": null,
+    "logo": "/static/images/partners/jada-30-asir.png",
     "website": null
   },
   {
@@ -29,7 +29,7 @@
     "period": "2026_H1",
     "description_ar": null,
     "description_en": null,
-    "logo": null,
+    "logo": "/static/images/partners/drones-academy-jeddah.png",
     "website": null
   },
   {
@@ -40,7 +40,7 @@
     "period": "2026_H1",
     "description_ar": null,
     "description_en": null,
-    "logo": null,
+    "logo": "/static/images/partners/student-council-psau.png",
     "website": null
   },
   {
@@ -51,7 +51,7 @@
     "period": "2026_H1",
     "description_ar": null,
     "description_en": null,
-    "logo": null,
+    "logo": "/static/images/partners/bader-academy.png",
     "website": null
   },
   {
@@ -62,7 +62,7 @@
     "period": "2026_H1",
     "description_ar": null,
     "description_en": null,
-    "logo": null,
+    "logo": "/static/images/partners/ishraq-association.png",
     "website": null
   },
   {
@@ -73,7 +73,7 @@
     "period": "2026_H2",
     "description_ar": null,
     "description_en": null,
-    "logo": null,
+    "logo": "/static/images/partners/itqan-education.png",
     "website": null
   },
   {
@@ -84,7 +84,7 @@
     "period": "2026_H2",
     "description_ar": null,
     "description_en": null,
-    "logo": null,
+    "logo": "/static/images/partners/shar-tourism.png",
     "website": null
   },
   {
@@ -95,7 +95,7 @@
     "period": "2026_H2",
     "description_ar": null,
     "description_en": null,
-    "logo": null,
+    "logo": "/static/images/partners/altahdhib-educational-services.png",
     "website": null
   },
   {
@@ -106,7 +106,7 @@
     "period": "2026_H2",
     "description_ar": null,
     "description_en": null,
-    "logo": null,
+    "logo": "/static/images/partners/alhamni-youth-skills.png",
     "website": null
   },
   {
@@ -117,7 +117,7 @@
     "period": "2026_H2",
     "description_ar": null,
     "description_en": null,
-    "logo": null,
+    "logo": "/static/images/partners/international-house-of-knowledge-uk.png",
     "website": null
   },
   {
@@ -128,7 +128,7 @@
     "period": "2026_H2",
     "description_ar": null,
     "description_en": null,
-    "logo": null,
+    "logo": "/static/images/partners/lobek.png",
     "website": null
   },
   {
@@ -139,7 +139,7 @@
     "period": "2026_H2",
     "description_ar": null,
     "description_en": null,
-    "logo": null,
+    "logo": "/static/images/partners/cyberkids.png",
     "website": null
   },
   {
@@ -150,7 +150,7 @@
     "period": "2026_H2",
     "description_ar": null,
     "description_en": null,
-    "logo": null,
+    "logo": "/static/images/partners/snip.png",
     "website": null
   },
   {
@@ -161,7 +161,7 @@
     "period": "2025",
     "description_ar": null,
     "description_en": null,
-    "logo": null,
+    "logo": "/static/images/partners/engineering-club-bisha-university.png",
     "website": null
   },
   {
@@ -172,7 +172,7 @@
     "period": "2025",
     "description_ar": null,
     "description_en": null,
-    "logo": null,
+    "logo": "/static/images/partners/ieee-king-abdulaziz-university.png",
     "website": null
   },
   {
@@ -183,7 +183,7 @@
     "period": "2025",
     "description_ar": null,
     "description_en": null,
-    "logo": null,
+    "logo": "/static/images/partners/robotics-engineering-club-taif.png",
     "website": null
   },
   {
@@ -194,7 +194,7 @@
     "period": "2025",
     "description_ar": null,
     "description_en": null,
-    "logo": null,
+    "logo": "/static/images/partners/google-developers-club-shaqra.png",
     "website": null
   },
   {
@@ -205,7 +205,7 @@
     "period": "2025",
     "description_ar": null,
     "description_en": null,
-    "logo": null,
+    "logo": "/static/images/partners/acm-ubt.png",
     "website": null
   },
   {
@@ -227,7 +227,7 @@
     "period": "2026_H1",
     "description_ar": null,
     "description_en": null,
-    "logo": null,
+    "logo": "/static/images/partners/data-science-club-psau.png",
     "website": null
   },
   {
@@ -238,7 +238,7 @@
     "period": "2026_H1",
     "description_ar": null,
     "description_en": null,
-    "logo": null,
+    "logo": "/static/images/partners/ai-club-arab-open-university-riyadh.png",
     "website": null
   },
   {
@@ -249,7 +249,7 @@
     "period": "2026_H2",
     "description_ar": null,
     "description_en": null,
-    "logo": null,
+    "logo": "/static/images/partners/tuwaiq-club-pnu.png",
     "website": null
   },
   {
@@ -260,7 +260,7 @@
     "period": "2026_H2",
     "description_ar": null,
     "description_en": null,
-    "logo": null,
+    "logo": "/static/images/partners/google-developers-group-qassim.png",
     "website": null
   },
   {
@@ -271,7 +271,7 @@
     "period": "2026_H2",
     "description_ar": null,
     "description_en": null,
-    "logo": null,
+    "logo": "/static/images/partners/computer-college-club-tabuk.png",
     "website": null
   },
   {
@@ -282,7 +282,7 @@
     "period": "2026_H2",
     "description_ar": null,
     "description_en": null,
-    "logo": null,
+    "logo": "/static/images/partners/nuqtat-intilaq-club.png",
     "website": null
   },
   {
@@ -293,7 +293,7 @@
     "period": "2026_H2",
     "description_ar": null,
     "description_en": null,
-    "logo": null,
+    "logo": "/static/images/partners/google-developers-club-pnu.png",
     "website": null
   },
   {
@@ -304,7 +304,7 @@
     "period": "2026_H2",
     "description_ar": null,
     "description_en": null,
-    "logo": null,
+    "logo": "/static/images/partners/google-developers-group-almostaqbal.png",
     "website": null
   },
   {
@@ -315,7 +315,7 @@
     "period": "2026_H2",
     "description_ar": null,
     "description_en": null,
-    "logo": null,
+    "logo": "/static/images/partners/programming-club-najran.png",
     "website": null
   },
   {
@@ -326,7 +326,7 @@
     "period": "2026_H2",
     "description_ar": null,
     "description_en": null,
-    "logo": null,
+    "logo": "/static/images/partners/energy-club-bisha.png",
     "website": null
   },
   {
@@ -337,7 +337,7 @@
     "period": "2026_H2",
     "description_ar": null,
     "description_en": null,
-    "logo": null,
+    "logo": "/static/images/partners/tuwaiq-club-tabuk.png",
     "website": null
   },
   {
@@ -348,7 +348,7 @@
     "period": "2026_H2",
     "description_ar": null,
     "description_en": null,
-    "logo": null,
+    "logo": "/static/images/partners/ieee-sb-king-abdulaziz-university.png",
     "website": null
   },
   {
@@ -359,7 +359,7 @@
     "period": "2026_H2",
     "description_ar": null,
     "description_en": null,
-    "logo": null,
+    "logo": "/static/images/partners/google-developers-group-jazan.png",
     "website": null
   },
   {
@@ -370,7 +370,7 @@
     "period": "2026_H1",
     "description_ar": null,
     "description_en": null,
-    "logo": null,
+    "logo": "/static/images/partners/wajeez.png",
     "website": null
   },
   {
@@ -381,7 +381,7 @@
     "period": "2026_H1",
     "description_ar": null,
     "description_en": null,
-    "logo": null,
+    "logo": "/static/images/partners/rasi-volunteer-team.png",
     "website": null
   },
   {
@@ -392,7 +392,7 @@
     "period": "2026_H2",
     "description_ar": null,
     "description_en": null,
-    "logo": null,
+    "logo": "/static/images/partners/sahab-volunteer-team.png",
     "website": null
   },
   {
@@ -403,7 +403,7 @@
     "period": "2026_H2",
     "description_ar": null,
     "description_en": null,
-    "logo": null,
+    "logo": "/static/images/partners/aws.png",
     "website": null
   },
   {
@@ -414,7 +414,7 @@
     "period": "2025",
     "description_ar": null,
     "description_en": null,
-    "logo": null,
+    "logo": "/static/images/partners/baheth-spark.png",
     "website": null
   },
   {
@@ -425,7 +425,7 @@
     "period": "2025",
     "description_ar": null,
     "description_en": null,
-    "logo": null,
+    "logo": "/static/images/partners/omq-alafkar.png",
     "website": null
   },
   {
@@ -436,7 +436,7 @@
     "period": "2025",
     "description_ar": null,
     "description_en": null,
-    "logo": null,
+    "logo": "/static/images/partners/bain-al-sotoor.png",
     "website": null
   },
   {
@@ -447,7 +447,7 @@
     "period": "2025",
     "description_ar": null,
     "description_en": null,
-    "logo": null,
+    "logo": "/static/images/partners/nojoom.png",
     "website": null
   },
   {
@@ -458,7 +458,7 @@
     "period": "2025",
     "description_ar": null,
     "description_en": null,
-    "logo": null,
+    "logo": "/static/images/partners/ofuq.png",
     "website": null
   },
   {
@@ -491,7 +491,7 @@
     "period": "2025",
     "description_ar": null,
     "description_en": null,
-    "logo": null,
+    "logo": "/static/images/partners/rowad-alqimam.png",
     "website": null
   },
   {
@@ -502,7 +502,7 @@
     "period": "2026_H1",
     "description_ar": null,
     "description_en": null,
-    "logo": null,
+    "logo": "/static/images/partners/alataa.png",
     "website": null
   },
   {
@@ -524,7 +524,7 @@
     "period": "2026_H1",
     "description_ar": null,
     "description_en": null,
-    "logo": null,
+    "logo": "/static/images/partners/nawa-rd.png",
     "website": null
   },
   {
@@ -535,7 +535,7 @@
     "period": "2026_H1",
     "description_ar": null,
     "description_en": null,
-    "logo": null,
+    "logo": "/static/images/partners/naqa-alqiyam-girls.png",
     "website": null
   },
   {
@@ -546,7 +546,7 @@
     "period": "2026_H1",
     "description_ar": null,
     "description_en": null,
-    "logo": null,
+    "logo": "/static/images/partners/sahm.png",
     "website": null
   },
   {
@@ -568,7 +568,7 @@
     "period": "2026_H2",
     "description_ar": null,
     "description_en": null,
-    "logo": null,
+    "logo": "/static/images/partners/madar-alebtikar.png",
     "website": null
   },
   {
@@ -579,7 +579,7 @@
     "period": "2026_H2",
     "description_ar": null,
     "description_en": null,
-    "logo": null,
+    "logo": "/static/images/partners/blue-horizon.png",
     "website": null
   },
   {
@@ -590,7 +590,7 @@
     "period": "2026_H2",
     "description_ar": null,
     "description_en": null,
-    "logo": null,
+    "logo": "/static/images/partners/namaa-community-development.png",
     "website": null
   },
   {
@@ -601,7 +601,7 @@
     "period": "2026_H2",
     "description_ar": null,
     "description_en": null,
-    "logo": null,
+    "logo": "/static/images/partners/nexus.png",
     "website": null
   },
   {
@@ -612,7 +612,7 @@
     "period": "2026_H2",
     "description_ar": null,
     "description_en": null,
-    "logo": null,
+    "logo": "/static/images/partners/makman.png",
     "website": null
   },
   {
@@ -623,7 +623,7 @@
     "period": "2026_H2",
     "description_ar": null,
     "description_en": null,
-    "logo": null,
+    "logo": "/static/images/partners/subr.png",
     "website": null
   },
   {
@@ -645,7 +645,7 @@
     "period": "2025",
     "description_ar": null,
     "description_en": null,
-    "logo": null,
+    "logo": "/static/images/partners/future-fintech-hackathon.png",
     "website": null
   },
   {
@@ -678,7 +678,7 @@
     "period": "2026_H1",
     "description_ar": null,
     "description_en": null,
-    "logo": null,
+    "logo": "/static/images/partners/Nazahathon.png",
     "website": null
   },
   {
@@ -700,7 +700,7 @@
     "period": "2026_H1",
     "description_ar": null,
     "description_en": null,
-    "logo": null,
+    "logo": "/static/images/partners/logitechthon.png",
     "website": null
   },
   {

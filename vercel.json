@@ -1,7 +1,7 @@
 {
   "functions": {
     "app.py": {
-      "includeFiles": "{frontend,data,translations,backend}/**"
+      "includeFiles": "{frontend,data,translations,backend,public/static}/**"
     }
   },
   "headers": [

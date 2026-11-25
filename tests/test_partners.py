@@ -52,6 +52,10 @@ def test_no_unintended_duplicate_names():
 
 
 def test_no_invented_fields():
+    root = Path(__file__).resolve().parent.parent
     for p in partners:
         assert p["description_ar"] is None and p["description_en"] is None
-        assert p["logo"] is None and p["website"] is None
+        assert p["website"] is None
+        if p["logo"] is not None:
+            assert p["logo"].startswith("/static/images/partners/") and ".." not in p["logo"]
+            assert (root / "public" / p["logo"].lstrip("/")).is_file(), p["logo"]

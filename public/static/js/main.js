@@ -139,7 +139,19 @@ function initControls() {
   // Broken images: hide them (CSP forbids inline onerror handlers). `error` does not bubble, so capture.
   document.addEventListener("error", (e) => {
     const el = e.target;
-    if (el instanceof HTMLImageElement && el.hasAttribute("data-hide-on-error")) el.remove();
+    if (!(el instanceof HTMLImageElement)) return;
+    if (el.hasAttribute("data-hide-on-error")) { el.remove(); return; }
+    const cat = el.dataset.fallbackIcon;   // modal logo failed to load: show the default category icon
+    if (cat && CATEGORIES.includes(cat)) {
+      const ns = "http://www.w3.org/2000/svg";
+      const svg = document.createElementNS(ns, "svg");
+      svg.setAttribute("class", "icon");
+      svg.setAttribute("aria-hidden", "true");
+      const use = document.createElementNS(ns, "use");
+      use.setAttribute("href", `#i-${cat}`);
+      svg.appendChild(use);
+      el.replaceWith(svg);
+    }
   }, true);
   $("search-input").addEventListener("input", (e) => { state.query = e.target.value; update(); });
   $("search-clear").addEventListener("click", () => { state.query = ""; syncControls(); update(); $("search-input").focus(); });

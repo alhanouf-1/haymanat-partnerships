@@ -3,6 +3,8 @@ from pathlib import Path
 
 from flask import Flask, redirect, request, url_for
 
+from .assets import asset_version
+
 from .routes.public_routes import public_bp
 from .security import apply_security_headers
 
@@ -12,6 +14,7 @@ PROJECT_ROOT = Path(__file__).resolve().parent.parent
 RESERVED_PREFIXES = {
     "static", "api", "admin", "login", "logout", "register", "signup", "account", "dashboard",
     "backend", "frontend", "data", "translations", "tests", "instance", "public",
+    "assets_backup", "venv", "env", "node_modules", "__pycache__",
     "__debugger__", "console", "wp-admin", "wp-login.php", "phpmyadmin",
 }
 
@@ -32,6 +35,14 @@ def create_app() -> Flask:
     app.config["MAX_CONTENT_LENGTH"] = 16 * 1024  # public read-only site: reject large bodies
 
     app.register_blueprint(public_bp)
+
+    @app.url_defaults
+    def version_static_urls(endpoint, values):
+        # Cache-busting: /static/x.js -> /static/x.js?v=<content hash>, changes whenever the file changes.
+        if endpoint == "static" and "v" not in values and values.get("filename"):
+            version = asset_version(app.static_folder, values["filename"])
+            if version:
+                values["v"] = version
 
     @app.errorhandler(404)
     def not_found(_error):

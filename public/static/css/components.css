@@ -154,3 +154,10 @@
 .info-row dd{margin:0;font-weight:500;overflow-wrap:anywhere}
 .info-row a{color:var(--color-secondary-dark);display:inline-flex;align-items:center;gap:.4rem;font-weight:600;text-decoration:underline;text-underline-offset:3px}
 body.modal-open{overflow:hidden}
+
+/* Become-a-partner button (next to hero CTA) */
+.btn-partner{margin-inline-start:.75rem;font-family:var(--font-ar)}
+@media (max-width:600px){.btn-partner{margin-inline-start:0;margin-block-start:.75rem}}
+
+/* Partner logos inside the existing avatar box: keep proportions, never crop */
+.avatar img{object-fit:contain;padding:3px}

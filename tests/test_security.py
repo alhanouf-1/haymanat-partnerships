@@ -259,5 +259,72 @@ def test_translations_have_no_html():
 def test_api_responses_are_json_and_safe(client):
     r = client.get("/api/partners")
     assert r.mimetype == "application/json" and len(r.get_json()) == 65
+    assert r.headers.get("Cache-Control") == "no-cache"
+    for p in r.get_json():
+        if p["logo"]:
+            assert p["logo"].startswith("/static/images/partners/") and "?v=" in p["logo"]
     r = client.get("/api/translations/ar")
     assert r.mimetype == "application/json"
+
+
+# ---------- injection (SQLi / SSTI), open redirect, cookies, CORS ----------
+@pytest.mark.parametrize("payload", [
+    "' OR '1'='1",
+    "1; DROP TABLE partners;--",
+    "' UNION SELECT 1,2,3--",
+    "{{77777*77777}}",
+    "${77777*77777}",
+    "<%= 77777*77777 %>",
+])
+def test_sqli_and_ssti_payloads_harmless(client, payload):
+    for path in ("/", "/api/partners"):
+        r = client.get(path, query_string={"q": payload, "id": payload})
+        body = r.get_data(as_text=True)
+        assert r.status_code == 200
+        assert payload not in body and "6049261729" not in body
+    r_tr = client.get(f"/api/translations/{payload}")
+    assert r_tr.status_code == 404
+    assert "6049261729" not in r_tr.get_data(as_text=True)
+    r_path = client.get(f"/{payload}")
+    assert r_path.status_code in (302, 404)
+    if r_path.status_code == 302:
+        assert r_path.headers["Location"] == "/"
+
+
+@pytest.mark.parametrize("path", ["/foo//bar", "/%2fevil.com", "/https://evil.com", "/redirect?next=https://evil.com"])
+def test_no_open_redirect_or_host_injection(client, path):
+    r = client.get(path, headers={"Host": "evil.example"})
+    assert r.status_code in (302, 404)
+    if r.status_code == 302:
+        loc = r.headers["Location"]
+        assert loc == "/" and "evil" not in loc
+
+
+def test_no_session_cookies_or_secret_key(client):
+    app = create_app()
+    assert app.secret_key is None
+    for path in ("/", "/api/partners", "/api/translations/en", "/static/css/base.css"):
+        r = client.get(path)
+        assert "Set-Cookie" not in r.headers, path
+
+
+def test_no_cors_wildcard_headers(client):
+    for path in ("/", "/api/partners", "/api/translations/ar"):
+        r = client.get(path, headers={"Origin": "https://evil.example"})
+        assert "Access-Control-Allow-Origin" not in r.headers, path
+
+
+def test_reserved_backup_and_env_prefixes_return_404(client):
+    for path in ("/assets_backup", "/assets_backup/partners.before-logos.json", "/venv", "/env", "/__pycache__", "/tests"):
+        assert client.get(path).status_code == 404, path
+
+
+def test_app_py_disables_debug():
+    src = (ROOT / "app.py").read_text(encoding="utf-8")
+    assert "debug=False" in src
+
+
+def test_modals_js_rejects_backslashes_and_escapes_category():
+    src = (ROOT / "public" / "static" / "js" / "modals.js").read_text(encoding="utf-8")
+    assert '!url.includes("\\\\")' in src
+    assert "escapeHtml(p.category)" in src

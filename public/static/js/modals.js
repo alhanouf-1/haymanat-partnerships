@@ -14,7 +14,7 @@ export const displayName = (p) => (getLang() === "en" && p.name_en ? p.name_en :
 /** Only same-site paths or https URLs are allowed as logo sources. */
 export function safeLogoUrl(url) {
   if (typeof url !== "string" || !url) return null;
-  if (url.startsWith("/static/") && !url.includes("..")) return url;
+  if (url.startsWith("/static/") && !url.includes("..") && !url.includes("\\")) return url;
   try { const u = new URL(url); return u.protocol === "https:" ? u.href : null; } catch { return null; }
 }
 
@@ -34,8 +34,8 @@ function render() {
   const site = p.website ? safeUrl(p.website) : null;
   const logoUrl = safeLogoUrl(p.logo);
   const logo = logoUrl
-    ? `<img src="${escapeHtml(logoUrl)}" alt="${escapeHtml(t("modal.logo_alt", { name }))}" data-hide-on-error>`
-    : `<svg class="icon" aria-hidden="true"><use href="#i-${p.category}"/></svg>`;
+    ? `<img src="${escapeHtml(logoUrl)}" alt="${escapeHtml(t("modal.logo_alt", { name }))}" data-fallback-icon="${escapeHtml(p.category)}">`
+    : `<svg class="icon" aria-hidden="true"><use href="#i-${escapeHtml(p.category)}"/></svg>`;
 
   body.innerHTML = `
     <div class="modal-head" data-cat="${escapeHtml(p.category)}">
